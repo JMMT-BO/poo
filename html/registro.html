@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acceso Institucional - SGA</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="pagina-acceso">
+    <main class="contenedor-acceso">
+        <!-- PANEL IZQUIERDO -->
+        <section class="panel-informacion">
+            <div>
+                <h3>
+                    school SGA Universidad
+                </h3>
+                <h1>
+                    Gestión Académica<br>
+                    de Excelencia
+                </h1>
+                <p>
+                    Acceda a la plataforma institucional para administrar
+                    sus recursos académicos, consultar horarios y gestionar
+                    su perfil universitario con seguridad y eficiencia.
+                </p>
+            </div>
+            <div class="seguridad">    
+            <span>Portal Institucional Seguro</span>
+            </div>
+        </section>
+        <!-- FORMULARIO DE ACCESO -->
+        <section class="formulario-acceso">
+            <h2>
+                Acceso Institucional
+            </h2>
+            <p class="descripcion-acceso">
+                Ingrese su informacion institucional para acceder al sistema.
+            </p>
+            <form id="formRegistro">
+                <p id="mensajeError" class="mensaje-error" hidden></p>
+                <div class="campo-acceso">
+                    <label for="tipoUsuario">
+                        Tipo de Usuario
+                    </label>
+                    <select id="tipoUsuario">
+                        <option value="docente">
+                            Docente
+                        </option>
+                        <option value="administrador">
+                            Administrador
+                        </option>
+                        <option value="estudiante">
+                            Estudiante
+                        </option>
+                    </select>
+                </div>
+
+                <div class="campo-acceso">
+                    <label for="correo">
+                        Correo Electrónico
+                    </label>
+                    <input
+                        type="email"
+                        id="correo"
+                        placeholder="usuario@institucion.edu"
+                    >
+                </div>
+
+                <div class="campo-acceso">
+                    <div class="label-password">
+                        <label for="contrasena">
+                            Contraseña
+                        </label>
+
+                    </div>
+                    <input
+                        type="password"
+                        id="contrasena"
+                        placeholder="••••••••"
+                    >
+                </div>
+                <button
+                    type="submit"
+                    id="btnIngresar"
+                    class="btn-ingresar"
+                >
+                    Ingresar al Sistema
+                    <span>→</span>
+                </button>
+            </form>
+        </section>
+    </main>
+    <script src="../js/auth.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/login.js"></script>
+    
+   
+
+    <div id="alerta" class="alerta">
+    <div class="alerta-contenido">
+        <span id="alertaIcono" class="alerta-icono">✓</span>
+
+        <div>
+            <h3 id="alertaTitulo">Éxito</h3>
+            <p id="alertaMensaje">La operación se realizó correctamente.</p>
+        </div>
+
+        <button id="cerrarAlerta" class="cerrar-alerta">×</button>
+    </div>
+</div>
+</body>
+</html>

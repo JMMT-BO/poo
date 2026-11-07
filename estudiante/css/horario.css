@@ -1,0 +1,630 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fa;
+    color: #243447;
+}
+
+
+/* CONTENEDOR PRINCIPAL */
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* BARRA LATERAL */
+
+.sidebar {
+    width: 220px;
+    background: #062b52;
+    color: white;
+    min-height: 100vh;
+}
+
+.logo {
+    height: 90px;
+    background: #0b355f;
+
+    display: flex;
+    align-items: center;
+
+    padding: 15px;
+
+    gap: 10px;
+}
+
+.logo h2 {
+    font-size: 17px;
+}
+
+.logo span {
+    font-size: 9px;
+    color: #b9cce0;
+}
+
+.logo-icon {
+    background: white;
+    color: #0b355f;
+
+    padding: 8px;
+
+    border-radius: 6px;
+}
+
+
+/* MENÚ */
+
+nav {
+    padding: 25px 12px;
+}
+
+nav a {
+    display: block;
+
+    color: #dce8f4;
+
+    text-decoration: none;
+
+    padding: 14px;
+
+    border-radius: 6px;
+
+    margin-bottom: 5px;
+}
+
+nav a.active,
+nav a:hover {
+    background: #174a78;
+}
+
+
+/* CONTENIDO */
+
+.main {
+    flex: 1;
+    padding-bottom: 25px;
+}
+
+
+/* BARRA SUPERIOR */
+
+.topbar {
+    height: 62px;
+
+    background: white;
+
+    border-bottom: 1px solid #e4e8ec;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 30px;
+}
+
+.search {
+    width: 420px;
+
+    background: #f5f7f9;
+
+    padding: 11px 15px;
+
+    border-radius: 5px;
+
+    color: #77818c;
+
+    font-size: 13px;
+}
+
+.icons {
+    color: #526271;
+}
+
+
+/* INFORMACIÓN DEL ESTUDIANTE */
+
+.student-header {
+    background: white;
+
+    margin: 22px 30px 15px;
+
+    padding: 20px;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.student-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.avatar {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    background: #ddd;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 27px;
+}
+
+.student-header small,
+.card small,
+.next-class small {
+    color: #697887;
+
+    font-size: 10px;
+
+    font-weight: bold;
+}
+
+.student-header h1 {
+    font-size: 21px;
+
+    margin: 5px 0;
+}
+
+.student-header p {
+    font-size: 11px;
+
+    color: #657482;
+}
+
+
+/* BOTONES */
+
+button {
+    border: none;
+
+    background: #0b3158;
+
+    color: white;
+
+    padding: 11px 17px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+
+/* TARJETAS */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 12px;
+
+    margin: 0 30px 15px;
+}
+
+.card {
+    background: white;
+
+    padding: 17px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 1px 3px #00000010;
+}
+
+.card strong {
+    display: block;
+
+    font-size: 19px;
+
+    margin: 7px 0;
+
+    color: #20374d;
+}
+
+.card em {
+    font-style: normal;
+
+    font-size: 11px;
+
+    color: #788592;
+}
+
+.card span {
+    color: #75818d;
+
+    font-size: 11px;
+}
+
+
+/* BARRA DEL HORARIO */
+
+.toolbar {
+    background: white;
+
+    margin: 0 30px;
+
+    padding: 8px;
+
+    display: flex;
+
+    gap: 5px;
+
+    align-items: center;
+
+    border-radius: 6px;
+}
+
+.toolbar button {
+    background: white;
+
+    color: #4c5965;
+}
+
+.toolbar .selected {
+    background: #eef3f7;
+
+    font-weight: bold;
+}
+
+.week {
+    margin-left: auto;
+
+    border: 1px solid #e2e6ea;
+
+    padding: 10px 15px;
+
+    font-size: 12px;
+
+    border-radius: 5px;
+}
+
+
+/* PRÓXIMA CLASE */
+
+.next-class {
+    margin: 12px 30px 8px;
+
+    padding: 12px 18px;
+
+    background: #062d55;
+
+    color: white;
+
+    border-radius: 7px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.next-class h3 {
+    font-size: 14px;
+
+    margin-top: 5px;
+}
+
+.class-time {
+    margin-left: auto;
+
+    text-align: right;
+
+    font-size: 11px;
+}
+
+.next-class button {
+    background: #a66b2d;
+
+    font-size: 10px;
+}
+
+
+/* LEYENDA */
+
+.legend {
+    margin: 0 30px;
+
+    background: white;
+
+    padding: 10px 18px;
+
+    font-size: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.blue-dot,
+.brown-dot,
+.dark-dot,
+.gray-dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+
+    margin-left: 15px;
+}
+
+.blue-dot {
+    background: #315d99;
+}
+
+.brown-dot {
+    background: #85633f;
+}
+
+.dark-dot {
+    background: #263c54;
+}
+
+.gray-dot {
+    background: #65758b;
+}
+
+
+/* HORARIO */
+
+.schedule {
+    margin: 0 30px;
+
+    background: white;
+
+    display: grid;
+
+    grid-template-columns: 55px repeat(6, 1fr);
+
+    min-height: 760px;
+
+    border-top: 1px solid #e2e6ea;
+}
+
+
+/* COLUMNA DE HORAS */
+
+.time-column {
+    background: #f7f8fa;
+}
+
+.time-column div {
+    height: 62px;
+
+    border-bottom: 1px solid #edf0f2;
+
+    text-align: right;
+
+    padding: 7px;
+
+    color: #687582;
+
+    font-size: 10px;
+}
+
+.time-column div:first-child {
+    height: 35px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+
+/* DÍAS */
+
+.day {
+    position: relative;
+
+    border-left: 1px solid #e6eaed;
+
+    background-image:
+        linear-gradient(
+            #eef1f3 1px,
+            transparent 1px
+        );
+
+    background-size: 100% 62px;
+}
+
+.day h4 {
+    height: 35px;
+
+    background: #f7f8fa;
+
+    text-align: center;
+
+    padding: 11px 2px;
+
+    font-size: 10px;
+
+    color: #53616e;
+}
+
+
+/* CLASES */
+
+.event {
+    position: absolute;
+
+    left: 5px;
+    right: 5px;
+
+    border-radius: 5px;
+
+    padding: 7px;
+
+    color: white;
+
+    font-size: 9px;
+
+    line-height: 1.35;
+
+    box-shadow: 0 1px 3px #0002;
+}
+
+.event strong {
+    font-size: 10px;
+}
+
+.event small {
+    font-size: 8px;
+}
+
+
+/* COLORES DE LAS CLASES */
+
+.event.blue {
+    background: #315d99;
+}
+
+.event.brown {
+    background: #85633f;
+}
+
+.event.dark {
+    background: #263c54;
+}
+
+.event.gray {
+    background: #65758b;
+}
+
+
+/* PIE DE PÁGINA */
+
+footer {
+    margin: 12px 30px;
+
+    padding: 13px 18px;
+
+    background: white;
+
+    color: #687582;
+
+    font-size: 10px;
+
+    border-radius: 6px;
+}
+
+footer span {
+    float: right;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+    .sidebar {
+        width: 170px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .schedule {
+        overflow-x: auto;
+
+        min-width: 850px;
+    }
+
+    .main {
+        overflow-x: auto;
+    }
+}
+
+
+.alerta {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 350px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    padding: 18px;
+    transform: translateX(420px);
+    transition: 0.3s ease;
+    z-index: 9999;
+}
+
+.alerta.mostrar {
+    transform: translateX(0);
+}
+
+.alerta-contenido {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.alerta-icono {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    background: #e8f7ee;
+    color: #28a745;
+}
+
+.alerta h3 {
+    margin: 0 0 4px;
+    font-size: 16px;
+}
+
+.alerta p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.cerrar-alerta {
+    margin-left: auto;
+    border: none;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #888;
+}
+
+.cerrar-alerta:hover {
+    color: #333;
+}

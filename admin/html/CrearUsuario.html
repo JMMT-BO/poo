@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario - Academia Pro</title>
+    <!-- Rutas corregidas hacia admin/css/ -->
+    <link rel="stylesheet" href="../css/Ges_Universidad.css">
+    <link rel="stylesheet" href="../css/usuario.css">
+</head>
+
+<body>
+    <!-- BARRA LATERAL -->
+    <aside class="sidebar">
+        <div class="logo-admin">
+            <h2>Academia Pro</h2>
+            <span>PORTAL UNIVERSITARIO</span>
+        </div>
+
+        <div class="usuario-admin">
+            <strong data-usuario-nombre>Administrador</strong>
+            <small>Administrador Central</small>
+        </div>
+
+        <nav class="menu">
+            <a href="Ges_Universidad.html">Panel de Control</a>
+            <a href="CrearUsuario.html" class="activo">Crear Usuario</a>
+            <a href="CrearMateria.html">Crear Materia</a>
+            <a href="CrearGrupo.html">Crear Grupo</a>
+            <a href="../../html/registro.html" id="btnCerrarSesion">Cerrar Sesión</a>
+        </nav>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenido">
+        <!-- BARRA SUPERIOR -->
+        <header class="topbar">
+            <div class="ruta">
+                <strong>Academia Pro</strong>
+                <span>/ Crear Usuario</span>
+            </div>
+
+            <div class="perfil">
+                <div>
+                    <strong data-usuario-nombre>Administrador</strong>
+                    <small>Administrador Central</small>
+                </div>
+                <div class="avatar" data-usuario-iniciales>AD</div>
+            </div>
+        </header>
+
+        <!-- ENCABEZADO -->
+        <section class="encabezado-usuario">
+            <div>
+                <div class="titulo-superior">ADMINISTRACIÓN DE USUARIOS</div>
+                <h1>Registro de Usuario Institucional</h1>
+                <p>Cree un nuevo estudiante o docente para el sistema académico.</p>
+            </div>
+        </section>
+
+        <!-- FORMULARIO -->
+        <section class="area-formulario">
+            <form id="formUsuario">
+                <!-- PASO 1: PERFIL -->
+                <div class="bloque-formulario">
+                    <div class="paso">PASO 1 DE 4</div>
+                    <h2>Tipo de Perfil a Vincular</h2>
+
+                    <div class="perfiles-usuario">
+                        <label class="perfil-opcion">
+                            <input type="radio" name="tipoPerfil" value="estudiante" checked>
+                            <div class="perfil-contenido">
+                                <div class="perfil-icono"></div>
+                                <h3>Estudiante</h3>
+                                <p>Inscripción a grupos, consulta de horario, notas y perfil académico.</p>
+                            </div>
+                        </label>
+
+                        <label class="perfil-opcion">
+                            <input type="radio" name="tipoPerfil" value="docente">
+                            <div class="perfil-contenido">
+                                <div class="perfil-icono"></div>
+                                <h3>Docente</h3>
+                                <p>Gestión de grupos, criterios de evaluación y calificaciones.</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- PASO 2: DATOS PERSONALES -->
+                <div class="bloque-formulario">
+                    <div class="titulo-bloque">
+                        <span>2</span>
+                        <h2>Datos Personales</h2>
+                    </div>
+
+                    <div class="grid-campos">
+                        <div class="campo-usuario">
+                            <label for="nombres">Primer y Segundo Nombre *</label>
+                            <input type="text" id="nombres" placeholder="Ej. Mateo Alejandro" autocomplete="off">
+                        </div>
+
+                        <div class="campo-usuario">
+                            <label for="apellidos">Apellidos Completos *</label>
+                            <input type="text" id="apellidos" placeholder="Ej. Rodríguez Pérez" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 3: ACCESO -->
+                <div class="bloque-formulario">
+                    <div class="titulo-bloque">
+                        <span>3</span>
+                        <h2>Credenciales de Acceso</h2>
+                    </div>
+
+                    <div class="grid-campos">
+                        <div class="campo-usuario">
+                            <label for="correoInstitucional">Correo Institucional *</label>
+                            <input type="email" id="correoInstitucional" placeholder="m.rodriguez@universidad.edu" autocomplete="off">
+                        </div>
+
+                        <div class="campo-usuario">
+                            <label for="contrasena">Contraseña Temporal *</label>
+                            <input type="password" id="contrasena" placeholder="Mínimo 6 caracteres" autocomplete="new-password">
+                            <small>Se guarda cifrada. El usuario podrá cambiarla desde su perfil.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 4: ACADÉMICO -->
+                <div class="bloque-formulario">
+                    <div class="titulo-bloque">
+                        <span>4</span>
+                        <h2>Información Académica</h2>
+                    </div>
+
+                    <div class="grid-campos">
+                        <div class="campo-usuario">
+                            <label for="programa" id="labelPrograma">Programa / Carrera *</label>
+                            <select id="programa">
+                                <option value="">Seleccione un programa</option>
+                                <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
+                                <option value="Ingeniería Industrial">Ingeniería Industrial</option>
+                                <option value="Administración de Empresas">Administración de Empresas</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-usuario" id="bloqueSemestre">
+                            <label for="semestre">Semestre Inicial *</label>
+                            <select id="semestre">
+                                <option value="">Seleccione</option>
+                                <option value="1">1° Semestre</option>
+                                <option value="2">2° Semestre</option>
+                                <option value="3">3° Semestre</option>
+                                <option value="4">4° Semestre</option>
+                                <option value="5">5° Semestre</option>
+                                <option value="6">6° Semestre</option>
+                                <option value="7">7° Semestre</option>
+                                <option value="8">8° Semestre</option>
+                                <option value="9">9° Semestre</option>
+                                <option value="10">10° Semestre</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOTONES -->
+                <div class="botones-usuario">
+                    <button type="button" id="btnDescartar">Descartar Registro</button>
+                    <button type="submit" id="btnRegistrar">Registrar y Crear Usuario</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- ALERTA -->
+    <div id="alerta" class="alerta">
+        <div class="alerta-contenido">
+            <span id="alertaIcono" class="alerta-icono">✓</span>
+            <div>
+                <h3 id="alertaTitulo">Éxito</h3>
+                <p id="alertaMensaje">La operación se realizó correctamente.</p>
+            </div>
+            <button type="button" id="cerrarAlerta" class="cerrar-alerta">×</button>
+        </div>
+    </div>
+
+    <!-- Scripts corregidos -->
+    <script src="../../js/api.js" data-rol="administrador"></script>
+    <script src="../js/usuario.js"></script>
+</body>
+</html>

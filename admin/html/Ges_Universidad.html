@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - Administración</title>
+    <!-- Ruta corregida hacia admin/css/ -->
+    <link rel="stylesheet" href="../css/Ges_Universidad.css">
+</head>
+
+<body>
+    <!-- BARRA LATERAL -->
+    <aside class="sidebar">
+        <div class="logo-admin">
+            <h2>Academia Pro</h2>
+            <span>Portal Universitario</span>
+        </div>
+
+        <div class="usuario-admin">
+            <strong data-usuario-nombre>Administrador</strong>
+        </div>
+
+        <nav class="menu">
+            <a href="Ges_Universidad.html" class="activo">Panel de Control</a>
+            <a href="CrearUsuario.html">Crear Usuario</a>
+            <a href="CrearMateria.html">Crear Materia</a>
+            <a href="CrearGrupo.html">Crear Grupo</a>
+            <a href="../../html/registro.html" id="btnCerrarSesion">Cerrar Sesión</a>
+        </nav>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenido">
+        <!-- BARRA SUPERIOR -->
+        <header class="topbar">
+            <div class="buscador">
+                <input type="text" id="buscar" placeholder="Buscar materia o docente...">
+            </div>
+
+            <div class="perfil">
+                <div>
+                    <strong data-usuario-nombre>Administrador</strong>
+                    <small>Administrador</small>
+                </div>
+                <div class="avatar" data-usuario-iniciales>AD</div>
+            </div>
+        </header>
+
+        <!-- ENCABEZADO -->
+        <section class="encabezado-panel">
+            <div>
+                <h1>Panel de Control Principal - Gestión Universitaria</h1>
+                <p>Resumen general de gestión académica y administrativa.</p>
+            </div>
+
+            <div class="acciones-panel">
+                <button type="button" id="btnReporte">Reporte<br>Rápido</button>
+                <button type="button" id="btnSincronizar">⇅ Sincronizar<br>Datos</button>
+            </div>
+        </section>
+
+        <!-- TARJETAS -->
+        <section class="estadisticas">
+            <div class="estadistica">
+                <div>
+                    <span>Materias Activas</span>
+                    <strong id="statMaterias">0</strong>
+                    <small>Registradas en el catálogo</small>
+                </div>
+                <div class="icono-estadistica"></div>
+            </div>
+
+            <div class="estadistica">
+                <div>
+                    <span>Usuarios del Sistema</span>
+                    <strong id="statUsuarios">0</strong>
+                    <small id="statUsuariosDetalle">Docentes y estudiantes activos</small>
+                </div>
+                <div class="icono-estadistica"></div>
+            </div>
+
+            <div class="estadistica">
+                <div>
+                    <span>Grupos Creados</span>
+                    <strong id="statGrupos">0</strong>
+                    <small id="statPeriodo">Sin grupos aún</small>
+                </div>
+                <div class="icono-estadistica"></div>
+            </div>
+        </section>
+
+        <!-- TABLAS -->
+        <section class="tablas">
+            <!-- MATERIAS -->
+            <div class="tabla-contenedor">
+                <div class="titulo-tabla">
+                    <h2>Gestión de Materias</h2>
+                    <a href="CrearMateria.html">Ver todas</a>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Materia</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaMaterias"></tbody>
+                </table>
+            </div>
+
+            <!-- DOCENTES -->
+            <div class="tabla-contenedor">
+                <div class="titulo-tabla">
+                    <h2>Gestión de Docentes</h2>
+                    <a href="CrearUsuario.html">Registrar docente</a>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Docente</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaDocentes"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ACCESOS RÁPIDOS -->
+        <section class="accesos">
+            <div class="titulo-accesos">
+                <h2>Accesos Rápidos de Administración</h2>
+                <span>Gestión Global Institucional</span>
+            </div>
+
+            <div class="accesos-grid">
+                <button type="button" class="acceso" onclick="location.href='CrearUsuario.html'">
+                    <span class="acceso-icono"></span>
+                    <div>
+                        <strong>Crear Usuario</strong>
+                        <small>Docentes y Estudiantes</small>
+                    </div>
+                </button>
+
+                <button type="button" class="acceso" onclick="location.href='CrearMateria.html'">
+                    <span class="acceso-icono"></span>
+                    <div>
+                        <strong>Crear Materia</strong>
+                        <small>Plan curricular</small>
+                    </div>
+                </button>
+
+                <button type="button" class="acceso" onclick="location.href='CrearGrupo.html'">
+                    <span class="acceso-icono"></span>
+                    <div>
+                        <strong>Crear Grupo</strong>
+                        <small>Materia, docente y cupo</small>
+                    </div>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer-admin">
+        <span>© 2026 Academia Pro - Sistema de Gestión Institucional</span>
+    </footer>
+
+    <!-- ALERTA -->
+    <div id="alerta" class="alerta">
+        <div class="alerta-contenido">
+            <span id="alertaIcono" class="alerta-icono">✓</span>
+            <div>
+                <h3 id="alertaTitulo">Éxito</h3>
+                <p id="alertaMensaje">La operación se realizó correctamente.</p>
+            </div>
+            <button type="button" id="cerrarAlerta" class="cerrar-alerta">×</button>
+        </div>
+    </div>
+
+    <!-- Scripts corregidos -->
+    <script src="../../js/api.js" data-rol="administrador"></script>
+    <script src="../js/Ges_Universidad.js"></script>
+</body>
+</html>

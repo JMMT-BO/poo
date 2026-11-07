@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Materia | Academia Pro</title>
+    <!-- Ruta corregida hacia admin/css/ -->
+    <link rel="stylesheet" href="../css/materia.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Academia Pro</h2>
+            <p>PORTAL UNIVERSITARIO</p>
+        </div>
+
+        <div class="perfil-admin">
+            <strong data-usuario-nombre>Administrador</strong>
+            <span>Panel administrativo</span>
+        </div>
+
+        <nav class="menu">
+            <a href="Ges_Universidad.html">Panel de Control</a>
+            <a href="CrearUsuario.html">Crear Usuario</a>
+            <a href="CrearMateria.html" class="activo">Crear Materia</a>
+            <a href="CrearGrupo.html">Crear Grupo</a>
+            <a href="../../html/registro.html" id="btnCerrarSesion">Cerrar Sesión</a>
+        </nav>
+    </aside>
+
+    <main class="contenido">
+        <header class="barra-superior">
+            <div class="ruta">
+                <strong>Academia Pro</strong>
+                <span>/ Crear Materia</span>
+            </div>
+
+            <div class="usuario-superior">
+                <span data-usuario-nombre>Administrador</span>
+                <div class="avatar" data-usuario-iniciales>AD</div>
+            </div>
+        </header>
+
+        <section class="encabezado">
+            <div>
+                <small>ADMINISTRACIÓN ACADÉMICA</small>
+                <h1>Catálogo de Asignaturas</h1>
+                <p>Registre, edite y active o desactive las materias del plan académico.</p>
+            </div>
+        </section>
+
+        <!-- FORMULARIO -->
+        <form id="formMateria">
+            <section class="bloque">
+                <div class="titulo-bloque">
+                    <span>1</span>
+                    <h2 id="tituloFormulario">Datos de la Asignatura</h2>
+                </div>
+
+                <div class="campos">
+                    <div class="campo">
+                        <label for="codigoMateria">Código de Materia *</label>
+                        <input type="text" id="codigoMateria" placeholder="SYS-304" maxlength="20" autocomplete="off">
+                    </div>
+
+                    <div class="campo">
+                        <label for="nombreMateria">Nombre de la Asignatura *</label>
+                        <input type="text" id="nombreMateria" placeholder="Arquitectura de Microservicios" maxlength="100" autocomplete="off">
+                    </div>
+
+                    <div class="campo">
+                        <label for="creditos">Créditos Totales *</label>
+                        <input type="number" id="creditos" min="1" max="20" placeholder="4">
+                    </div>
+
+                    <div class="campo">
+                        <label for="materiaActiva">Estado</label>
+                        <select id="materiaActiva">
+                            <option value="1">Activa</option>
+                            <option value="0">Inactiva</option>
+                        </select>
+                    </div>
+
+                    <div class="campo campo-completo">
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" placeholder="Describa los contenidos y objetivos de la asignatura"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <div class="botones">
+                <button type="button" id="btnDescartar" class="btn-secundario">Descartar</button>
+                <button type="submit" id="btnGuardarMateria" class="btn-principal">Guardar Materia</button>
+            </div>
+        </form>
+
+        <!-- TABLA -->
+        <section class="tabla-contenedor">
+            <div class="cabecera-tabla">
+                <div>
+                    <h2>Asignaturas Registradas</h2>
+                    <p>Catálogo de asignaturas del sistema.</p>
+                </div>
+                <input type="text" id="buscarMateria" placeholder="Buscar materia...">
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Créditos</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaCuerpo"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- ALERTA -->
+    <div id="alerta" class="alerta">
+        <div class="alerta-contenido">
+            <span id="alertaIcono" class="alerta-icono">✓</span>
+            <div>
+                <h3 id="alertaTitulo">Éxito</h3>
+                <p id="alertaMensaje">La operación se realizó correctamente.</p>
+            </div>
+            <button type="button" id="cerrarAlerta" class="cerrar-alerta">×</button>
+        </div>
+    </div>
+
+    <!-- Scripts corregidos -->
+    <script src="../../js/api.js" data-rol="administrador"></script>
+    <script src="../js/materia.js"></script>
+</body>
+</html>

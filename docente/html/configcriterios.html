@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academia Pro | Configuración de Criterios</title>
+
+    <!-- CSS DE ESTA VISTA -->
+    <link rel="stylesheet" href="../css/configcriterios.css">
+
+    <!-- FUENTES E ICONOS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         BARRA LATERAL
+    =========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div>
+                <h2>Academia Pro</h2>
+                <span>Portal Docente</span>
+            </div>
+
+        </div>
+
+
+        <div class="perfil-docente">
+
+            <div class="avatar-docente">CR</div>
+
+            <div class="datos-docente">
+                <strong data-usuario-nombre>Prof. Carlos Rivera</strong>
+                <span>Profesor Titular</span>
+            </div>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="gruposA.html" class="nav-item">
+                <i class="fa-solid fa-users"></i>
+                <span>Mis Grupos Asignados</span>
+            </a>
+
+            <a href="configcriterios.html"
+               class="nav-item active"
+               aria-current="page">
+                <i class="fa-solid fa-sliders"></i>
+                <span>Configuración de Criterios</span>
+            </a>
+
+            <a href="calycriterios.html" class="nav-item">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>Calificaciones</span>
+            </a>
+
+            <a href="../../html/registro.html"
+               id="btnCerrarSesion"
+               class="nav-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Cerrar Sesión</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL
+    =========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- ENCABEZADO -->
+
+        <header class="header">
+
+            <div class="buscador">
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text"
+                       id="globalSearch"
+                       placeholder="Buscar criterio...">
+            </div>
+
+            <div class="acciones-header">
+
+                <button type="button"
+                        class="icon-button"
+                        data-accion="notificaciones"
+                        title="Notificaciones">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notificacion"></span>
+                </button>
+
+                <button type="button"
+                        class="icon-button"
+                        data-accion="configuracion"
+                        title="Configuración">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+
+                <div class="avatar-header">CR</div>
+
+            </div>
+
+        </header>
+
+
+        <!-- TÍTULO -->
+
+        <section class="titulo-pagina">
+
+            <div>
+                <span class="subtitulo">Gestión académica</span>
+
+                <h1>Configuración de Criterios</h1>
+
+                <p>
+                    Organiza los criterios de evaluación y establece
+                    los porcentajes correspondientes a cada actividad.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- INFORMACIÓN DE LA ASIGNATURA -->
+
+        <section class="curso-card">
+
+            <div class="curso-info">
+
+                <div class="curso-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <div>
+                    <span class="curso-label">Asignatura seleccionada</span>
+
+                    <h2 id="nombreAsignatura">
+                        Algoritmos y Estructuras de Datos
+                    </h2>
+
+                    <p id="informacionGrupo">
+                        CS201 · Grupo A · Periodo 2024-I
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="curso-estado">
+                <span class="estado-activo">Activo</span>
+            </div>
+
+        </section>
+
+
+        <!-- INFORMACIÓN -->
+
+        <section class="card">
+
+            <div class="card-header">
+
+                <div>
+                    <h2>Criterios de Evaluación</h2>
+
+                    <p>
+                        Define los criterios que se utilizarán
+                        para calcular las calificaciones del grupo.
+                    </p>
+                </div>
+
+                <div class="total-box">
+                    <span>Total asignado</span>
+                    <strong id="totalPorcentaje">100%</strong>
+                </div>
+
+            </div>
+
+
+            <!-- FORMULARIO -->
+
+            <form id="formCriterio" class="form-criterio">
+
+                <div class="campo">
+
+                    <label for="nombreCriterio">
+                        Nombre del criterio
+                    </label>
+
+                    <input type="text"
+                           id="nombreCriterio"
+                           name="nombreCriterio"
+                           placeholder="Ej. Examen parcial"
+                           maxlength="100"
+                           required>
+
+                </div>
+
+
+                <div class="campo campo-porcentaje">
+
+                    <label for="porcentajeCriterio">
+                        Porcentaje
+                    </label>
+
+                    <div class="input-porcentaje">
+
+                        <input type="number"
+                               id="porcentajeCriterio"
+                               name="porcentajeCriterio"
+                               min="0.01"
+                               max="100"
+                               step="0.01"
+                               placeholder="30"
+                               required>
+
+                        <span>%</span>
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit" class="btn-agregar">
+                    <i class="fa-solid fa-plus"></i>
+                    Agregar criterio
+                </button>
+
+            </form>
+
+
+            <!-- TABLA -->
+
+            <div class="tabla-contenedor">
+
+                <table class="tabla-criterios" id="tablaCriterios">
+
+                    <thead>
+                        <tr>
+                            <th>Criterio</th>
+                            <th>Porcentaje</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tbodyCriterios">
+
+                        <tr>
+                            <td>Tareas y trabajos</td>
+                            <td>30%</td>
+                            <td>
+                                <button type="button"
+                                        class="btn-eliminar"
+                                        title="Eliminar criterio">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Examen parcial</td>
+                            <td>30%</td>
+                            <td>
+                                <button type="button"
+                                        class="btn-eliminar"
+                                        title="Eliminar criterio">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Proyecto final</td>
+                            <td>40%</td>
+                            <td>
+                                <button type="button"
+                                        class="btn-eliminar"
+                                        title="Eliminar criterio">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- ESTADO DE CONFIGURACIÓN -->
+
+            <div class="estado-configuracion" id="estadoConfiguracion">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <p>
+                    Los porcentajes de todos los criterios deben sumar 100 %
+                    para completar la configuración.
+                </p>
+
+            </div>
+
+
+            <!-- ACCIONES -->
+
+            <div class="acciones-planilla">
+
+                <button type="button"
+                        class="btn-secundario"
+                        id="btnGuardarBorrador">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    Guardar configuración
+                </button>
+
+                <a href="calycriterios.html" class="btn-principal">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    Ir a calificaciones
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- AYUDA -->
+
+        <section class="card ayuda-card">
+
+            <div>
+                <h3>Información importante</h3>
+
+                <p>
+                    Los criterios establecidos serán utilizados
+                    en el cálculo de las calificaciones del grupo.
+                    Cualquier modificación debe conservar el total
+                    de ponderación del 100 %.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- ALERTA -->
+
+        <div id="alerta" class="alerta">
+
+            <div class="alerta-contenido">
+
+                <span id="alertaIcono" class="alerta-icono">✓</span>
+
+                <div class="alerta-texto">
+                    <h3 id="alertaTitulo">Éxito</h3>
+
+                    <p id="alertaMensaje">
+                        Operación realizada correctamente.
+                    </p>
+                </div>
+
+                <button type="button"
+                        id="cerrarAlerta"
+                        class="cerrar-alerta">
+                    ×
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+            <span>Academia Pro © 2026</span>
+            <span>Portal Docente · Configuración de Criterios</span>
+        </footer>
+
+    </main>
+
+
+    <!-- AUTENTICACIÓN -->
+
+    <script src="../../js/auth.js" data-rol="docente"></script>
+
+    <!-- JAVASCRIPT DE ESTA VISTA -->
+
+    <script src="../js/configcriterios.js" defer></script>
+
+</body>
+</html>

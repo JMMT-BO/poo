@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SGA Institucional</title>
+
+    <!-- Conexión con CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/introduccion.css">
+</head>
+<body>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header class="navbar">
+        <div class="logo">
+            SGA Institucional
+        </div>
+    </header>
+
+    <!-- SECCIÓN PRINCIPAL -->
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>
+                    Gestión Académica<br>
+                    Centralizada y Eficiente
+                </h1>
+                <p>
+                    SGA Institucional facilita la gestión académica,
+                    administrativa y de información, mejorando los
+                    procesos y la comunicación dentro de la institución.
+                </p>
+                <div class="hero-botones">
+                    <button id="btnPortal">
+                        Ingresar al Portal
+                    </button>
+                    <button id="btnConocer" class="boton-secundario">
+                        Conocer SGA
+                    </button>
+                </div>
+            </div>
+            <div class="hero-imagen">
+                <img src="../img/hero_sga.svg" alt="Gestión académica">
+            </div>
+        </section>
+        <!-- SOLUCIONES POR PERFIL -->
+        <section class="perfiles" id="funcionalidades">
+            <div class="titulo-seccion">
+                <h2>
+                    Soluciones por Perfil
+                </h2>
+                <p>
+                    Herramientas diseñadas para las necesidades de cada usuario.
+                </p>
+            </div>
+            <div class="tarjetas">
+                <!-- ESTUDIANTES -->
+                <article class="tarjeta">
+                    <h3>
+                        Para Estudiantes
+                    </h3>
+                    <p>
+                        Accede fácilmente a tu información académica,
+                        consulta tus actividades y mantente al día
+                        con tus procesos institucionales.
+                    </p>
+                    <ul>
+                        <li>Notas y calificaciones</li>
+                        <li>Horario académico</li>
+                        <li>Información personal</li>
+                    </ul>
+                </article>
+
+                <!-- DOCENTES -->
+                <article class="tarjeta">
+                    <h3>
+                        Para Docentes
+                    </h3>
+                    <p>
+                        Administra de manera sencilla tus cursos,
+                        estudiantes y actividades académicas desde
+                        un solo lugar.
+                    </p>
+                    <ul>
+                        <li>Registro de estudiantes</li>
+                        <li>Gestión de calificaciones</li>
+                        <li>Registro de asistencia</li>
+                    </ul>
+                </article>
+                <!-- ADMINISTRADORES -->
+                <article class="tarjeta">
+                    <h3>
+                        Para Administradores
+                    </h3>
+                    <p>
+                        Controla y administra la información
+                        institucional para mejorar los procesos
+                        académicos y administrativos.
+                    </p>
+                    <ul>
+                        <li>Gestión de usuarios</li>
+                        <li>Control académico</li>
+                        <li>Información institucional</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+    </main>
+    <!-- PIE DE PÁGINA -->
+    <footer id="ayuda">
+        <div class="footer-logo">
+            SGA Institucional
+        </div>
+        <p>
+            © 2026 Sistema de Gestión Académica. Todos los derechos reservados.
+        </p>
+    </footer>
+    
+    <script src="../js/auth.js"></script>
+    <script src="../js/introduccion.js"></script>
+
+    <div id="alerta" class="alerta">
+    <div class="alerta-contenido">
+        <span id="alertaIcono" class="alerta-icono">✓</span>
+
+        <div>
+            <h3 id="alertaTitulo">Éxito</h3>
+            <p id="alertaMensaje">La operación se realizó correctamente.</p>
+        </div>
+
+        <button id="cerrarAlerta" class="cerrar-alerta">×</button>
+    </div>
+</div>
+</body>
+</html>

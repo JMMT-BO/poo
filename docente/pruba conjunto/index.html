@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia Pro - Portal Docente</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="layout">
+        <!-- BARRA LATERAL UNIFICADA -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="brand">
+                    <i class="fa-solid fa-graduation-cap brand-icon"></i>
+                    <div class="brand-text">
+                        <h2>Academia Pro</h2>
+                        <span>Portal Docente</span>
+                    </div>
+                </div>
+                <div class="profesor-badge">Profesor Titular</div>
+
+                <nav class="sidebar-nav">
+                    <button class="nav-item active" onclick="switchTab('grupos-tab', this)">
+                        <i class="fa-solid fa-table-cells-large"></i>
+                        <span>Mis Grupos Asignados</span>
+                    </button>
+                    <button class="nav-item" onclick="switchTab('criterios-tab', this)">
+                        <i class="fa-solid fa-sliders"></i>
+                        <span>Calificaciones y Criterios</span>
+                    </button>
+                </nav>
+            </div>
+
+            <div class="sidebar-bottom">
+                <button class="btn-logout" onclick="cerrarSesion()">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Cerrar Sesión</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+            <!-- HEADER COMÚN -->
+            <header class="top-header">
+                <div class="header-title">
+                    <span class="sga-label">SGA Académico</span> • <span class="portal-label">Portal Docente</span>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="globalSearch" placeholder="Buscar grupo o estudiante..." onkeyup="filtrarContenido()">
+                    </div>
+                    <button class="btn-icon" onclick="alert('Notificaciones vacías')"><i class="fa-regular fa-bell"></i></button>
+                    <button class="btn-icon" onclick="alert('Centro de ayuda')"><i class="fa-regular fa-circle-question"></i></button>
+                    <div class="user-profile">
+                        <div class="user-details">
+                            <span class="user-name">Prof. Carlos Rivera</span>
+                            <span class="user-role">Docente Titular</span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100" alt="Avatar" class="avatar-img">
+                    </div>
+                </div>
+            </header>
+
+            <!-- VISTA 1: MIS GRUPOS ASIGNADOS -->
+            <section id="grupos-tab" class="tab-content active">
+                <div class="course-header-section">
+                    <div class="course-title-block">
+                        <h1>Mis Grupos Asignados</h1>
+                        <p class="course-meta">Periodo Académico 2024-I</p>
+                    </div>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="card group-card" onclick="irACriterios('Cálculo Diferencial - Grupo 02')">
+                        <div class="card-status active">Activo</div>
+                        <h3>Cálculo Diferencial</h3>
+                        <p class="group-code">Grupo 02 • Ingeniería de Sistemas</p>
+                        <div class="card-footer-info">
+                            <span><i class="fa-solid fa-users"></i> 32 Estudiantes</span>
+                            <i class="fa-solid fa-arrow-right icon-arrow"></i>
+                        </div>
+                    </div>
+
+                    <div class="card group-card" onclick="irACriterios('Álgebra Lineal - Grupo 01')">
+                        <div class="card-status active">Activo</div>
+                        <h3>Álgebra Lineal</h3>
+                        <p class="group-code">Grupo 01 • Ingeniería de Sistemas</p>
+                        <div class="card-footer-info">
+                            <span><i class="fa-solid fa-users"></i> 28 Estudiantes</span>
+                            <i class="fa-solid fa-arrow-right icon-arrow"></i>
+                        </div>
+                    </div>
+
+                    <div class="card group-card" onclick="irACriterios('Física Mecánica - Grupo 03')">
+                        <div class="card-status active">Activo</div>
+                        <h3>Física Mecánica</h3>
+                        <p class="group-code">Grupo 03 • Ingeniería Industrial</p>
+                        <div class="card-footer-info">
+                            <span><i class="fa-solid fa-users"></i> 25 Estudiantes</span>
+                            <i class="fa-solid fa-arrow-right icon-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VISTA 2: CALIFICACIONES Y CRITERIOS -->
+            <section id="criterios-tab" class="tab-content">
+                <div class="course-header-section">
+                    <div class="course-title-block">
+                        <h1 id="cursoTitulo">Cálculo Diferencial - Grupo 02</h1>
+                        <p class="course-meta">Semestre Académico 2024-I • Ingeniería de Sistemas</p>
+                    </div>
+                    <div class="header-buttons">
+                        <button class="btn btn-outline" onclick="guardarBorrador()"><i class="fa-solid fa-floppy-disk"></i> Guardar Borrador</button>
+                        <button class="btn btn-outline" onclick="exportarPlanilla()">Exportar</button>
+                        <button class="btn btn-navy" onclick="enviarCoordinacion()"><i class="fa-solid fa-play"></i> Enviar a Coordinación</button>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- CRITERIOS DE EVALUACIÓN -->
+                    <section class="card criteria-card">
+                        <div class="card-header-flex">
+                            <h3>Criterios de Evaluación</h3>
+                            <div class="total-badge">
+                                <span class="total-percent" id="totalPercent">100%</span>
+                                <span class="total-label">Total</span>
+                            </div>
+                        </div>
+
+                        <div class="criteria-list" id="criteriaList">
+                            <div class="criterion-box">
+                                <div class="input-group">
+                                    <label>Nombre del Parámetro</label>
+                                    <input type="text" class="crit-name" value="Parcial 1">
+                                </div>
+                                <div class="input-group weight-group">
+                                    <label>Peso (%)</label>
+                                    <input type="number" class="crit-weight" value="30" oninput="recalcularCriterios()">
+                                </div>
+                            </div>
+                            <div class="criterion-box">
+                                <div class="input-group">
+                                    <label>Nombre del Parámetro</label>
+                                    <input type="text" class="crit-name" value="Talleres (Promed)">
+                                </div>
+                                <div class="input-group weight-group">
+                                    <label>Peso (%)</label>
+                                    <input type="number" class="crit-weight" value="30" oninput="recalcularCriterios()">
+                                </div>
+                            </div>
+                            <div class="criterion-box">
+                                <div class="input-group">
+                                    <label>Nombre del Parámetro</label>
+                                    <input type="text" class="crit-name" value="Examen Final">
+                                </div>
+                                <div class="input-group weight-group">
+                                    <label>Peso (%)</label>
+                                    <input type="number" class="crit-weight" value="40" oninput="recalcularCriterios()">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn-add-dashed" onclick="agregarParametro()">+ Añadir Parámetro</button>
+                    </section>
+
+                    <!-- LISTADO Y NOTAS -->
+                    <section class="card grades-card">
+                        <div class="card-header-flex align-start">
+                            <div>
+                                <h3>Listado de Estudiantes y Calificaciones</h3>
+                                <p class="subtext">Registro activo • Calificaciones ponderadas según criterios establecidos</p>
+                            </div>
+                            <div class="meta-badges">
+                                <div class="badge-info">32<br><small>Estudiantes</small></div>
+                                <div class="badge-blue">Semestre<br><strong>2024-1</strong></div>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="grades-table" id="tablaNotas">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Estudiante</th>
+                                        <th class="text-center">Parcial 1<br><span class="weight-sub">30%</span></th>
+                                        <th class="text-center">Talleres<br><span class="weight-sub">30%</span></th>
+                                        <th class="text-center">Ex. Final<br><span class="weight-sub">40%</span></th>
+                                        <th class="text-center">Definitiva</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-muted">001</td>
+                                        <td class="font-medium">Alvarez, Carlos</td>
+                                        <td class="text-center"><input type="text" class="grade-input" value="4,2" onchange="calcularFila(this)"></td>
+                                        <td class="text-center"><input type="text" class="grade-input" value="3,8" onchange="calcularFila(this)"></td>
+                                        <td class="text-center"><input type="text" class="grade-input" value="4,0" onchange="calcularFila(this)"></td>
+                                        <td class="text-center final-grade font-bold">4.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-muted">002</td>
+                                        <td class="font-medium">Bermúdez, Diana</td>
+                                        <td class="text-center"><input type="text" class="grade-input" value="3,5" onchange="calcularFila(this)"></td>
+                                        <td class="text-center"><input type="text" class="grade-input" value="4,5" onchange="calcularFila(this)"></td>
+                                        <td class="text-center"><input type="text" class="grade-input" value="3,9" onchange="calcularFila(this)"></td>
+                                        <td class="text-center final-grade font-bold">3.96</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-muted">003</td>
+                                        <td class="font-medium">Castillo, Esteban</td>
+                                        <td class="text-center"><input type="text" class="grade-input danger-border" value="2,8" onchange="calcularFila(this)"></td>
+                                        <td class="text-center"><input type="text" class="grade-input" value="3,1" onchange="calcularFila(this)"></td>
+                                        <td class="text-center"><input type="text" class="grade-input" value="-" onchange="calcularFila(this)"></td>
+                                        <td class="text-center final-grade font-bold text-muted">-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <!-- FOOTER COMÚN -->
+            <footer class="bottom-footer">
+                <p>© 2024 Sistema de Gestión Académica - Universidad Institucional</p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // NAVEGACIÓN ENTRE VISTAS
+        function switchTab(tabId, element) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            if(element) element.classList.add('active');
+        }
+
+        function irACriterios(nombreCurso) {
+            document.getElementById('cursoTitulo').innerText = nombreCurso;
+            const navBtns = document.querySelectorAll('.nav-item');
+            switchTab('criterios-tab', navBtns[1]);
+        }
+
+        // LÓGICA DE NOTAS Y CRITERIOS
+        function parseGrade(val) {
+            if(!val || val.trim() === '-' || val.trim() === '') return null;
+            let normalized = val.replace(',', '.');
+            let parsed = parseFloat(normalized);
+            return isNaN(parsed) ? null : parsed;
+        }
+
+        function formatGrade(num) {
+            if (num === null) return '-';
+            return num % 1 === 0 ? num.toFixed(1) : parseFloat(num.toFixed(2)).toString();
+        }
+
+        function calcularFila(input) {
+            const tr = input.closest('tr');
+            const inputs = tr.querySelectorAll('.grade-input');
+            const finalCell = tr.querySelector('.final-grade');
+
+            inputs.forEach(inp => {
+                let val = parseGrade(inp.value);
+                if(val !== null && val < 3.0) {
+                    inp.classList.add('danger-border');
+                } else {
+                    inp.classList.remove('danger-border');
+                }
+            });
+
+            const weights = Array.from(document.querySelectorAll('.crit-weight')).map(w => (parseFloat(w.value) || 0) / 100);
+            let total = 0;
+            let hasAllGrades = true;
+
+            inputs.forEach((inp, idx) => {
+                let val = parseGrade(inp.value);
+                if (val !== null && weights[idx]) {
+                    total += val * weights[idx];
+                } else {
+                    hasAllGrades = false;
+                }
+            });
+
+            if (hasAllGrades && weights.reduce((a, b) => a + b, 0) > 0) {
+                finalCell.innerText = formatGrade(total);
+                finalCell.classList.remove('text-muted');
+            } else {
+                finalCell.innerText = '-';
+                finalCell.classList.add('text-muted');
+            }
+        }
+
+        function recalcularCriterios() {
+            const weights = document.querySelectorAll('.crit-weight');
+            let sum = 0;
+            weights.forEach(w => sum += parseFloat(w.value) || 0);
+
+            const totalEl = document.getElementById('totalPercent');
+            totalEl.innerText = `${sum}%`;
+            totalEl.style.color = (sum === 100) ? '#0b1a30' : '#e11d48';
+
+            document.querySelectorAll('#tablaNotas tbody tr input.grade-input').forEach(inp => calcularFila(inp));
+        }
+
+        function agregarParametro() {
+            const container = document.getElementById('criteriaList');
+            const newBox = document.createElement('div');
+            newBox.className = 'criterion-box';
+            newBox.innerHTML = `
+                <div class="input-group">
+                    <label>Nombre del Parámetro</label>
+                    <input type="text" class="crit-name" placeholder="Nuevo Parámetro">
+                </div>
+                <div class="input-group weight-group">
+                    <label>Peso (%)</label>
+                    <input type="number" class="crit-weight" value="0" oninput="recalcularCriterios()">
+                </div>
+            `;
+            container.appendChild(newBox);
+            recalcularCriterios();
+        }
+
+        function filtrarContenido() {
+            const query = document.getElementById('globalSearch').value.toLowerCase();
+            const activeTab = document.querySelector('.tab-content.active').id;
+
+            if(activeTab === 'grupos-tab') {
+                document.querySelectorAll('.group-card').forEach(card => {
+                    card.style.display = card.innerText.toLowerCase().includes(query) ? 'block' : 'none';
+                });
+            } else {
+                document.querySelectorAll('#tablaNotas tbody tr').forEach(row => {
+                    row.style.display = row.innerText.toLowerCase().includes(query) ? '' : 'none';
+                });
+            }
+        }
+
+        function guardarBorrador() { alert("💾 Borrador guardado correctamente."); }
+        function exportarPlanilla() { alert("📄 Exportando planilla..."); }
+        function enviarCoordinacion() { alert("🚀 Enviado a Coordinación."); }
+        function cerrarSesion() { if(confirm("¿Deseas cerrar sesión?")) alert("Sesión finalizada."); }
+    </script>
+      <link rel="stylesheet" href="style.css">
+</body>
+</html>

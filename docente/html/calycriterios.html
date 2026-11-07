@@ -1,0 +1,583 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academia Pro | Calificaciones</title>
+
+    <!-- CSS DE ESTA VISTA -->
+    <link rel="stylesheet" href="../css/calycriterios.css">
+
+    <!-- FUENTES E ICONOS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         ESTRUCTURA GENERAL
+    =========================================== -->
+
+    <div class="layout">
+
+
+        <!-- ======================================
+             BARRA LATERAL
+        ======================================= -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-top">
+
+                <div class="brand">
+
+                    <i class="fa-solid fa-graduation-cap brand-icon"></i>
+
+                    <div class="brand-text">
+                        <h2>Academia Pro</h2>
+                        <span>Portal Docente</span>
+                    </div>
+
+                </div>
+
+
+                <div class="profesor-badge">
+                    Profesor Titular
+                </div>
+
+
+                <nav class="sidebar-nav">
+
+                    <a href="gruposA.html" class="nav-item">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Mis Grupos Asignados</span>
+                    </a>
+
+                    <a href="configcriterios.html" class="nav-item">
+                        <i class="fa-solid fa-sliders"></i>
+                        <span>Configuración de Criterios</span>
+                    </a>
+
+                    <a href="calycriterios.html"
+                       class="nav-item active"
+                       aria-current="page">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                        <span>Calificaciones</span>
+                    </a>
+
+                    <a href="../../html/registro.html"
+                       id="btnCerrarSesion"
+                       class="nav-item">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Cerrar Sesión</span>
+                    </a>
+
+                </nav>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ======================================
+             CONTENIDO PRINCIPAL
+        ======================================= -->
+
+        <main class="main-content">
+
+
+            <!-- ENCABEZADO -->
+
+            <header class="top-header">
+
+                <div class="header-title">
+
+                    <span class="sga-label">
+                        SGA Académico
+                    </span>
+
+                    <span> · </span>
+
+                    <span class="portal-label">
+                        Portal Docente
+                    </span>
+
+                </div>
+
+
+                <div class="header-actions">
+
+                    <div class="search-bar">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input type="text"
+                               id="globalSearch"
+                               placeholder="Buscar estudiante...">
+
+                    </div>
+
+
+                    <button type="button"
+                            class="btn-icon"
+                            id="btnNotificaciones"
+                            title="Notificaciones">
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+
+
+                    <button type="button"
+                            class="btn-icon"
+                            id="btnAyuda"
+                            title="Ayuda">
+                        <i class="fa-regular fa-circle-question"></i>
+                    </button>
+
+
+                    <div class="user-profile">
+
+                        <div class="user-details">
+                            <span class="user-name">Prof. Carlos Rivera</span>
+                            <span class="user-role">Profesor Titular</span>
+                        </div>
+
+                        <div class="avatar">
+                            CR
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ==================================
+                 INFORMACIÓN DEL CURSO
+            =================================== -->
+
+            <section class="course-header-section">
+
+                <div class="course-title-block">
+
+                    <span class="course-label">
+                        GESTIÓN ACADÉMICA
+                    </span>
+
+                    <h1>
+                        Cálculo Diferencial - Grupo 02
+                    </h1>
+
+                    <p class="course-meta">
+                        MAT-201 · Semestre Académico 2024-I
+                        · Ingeniería de Sistemas
+                    </p>
+
+                </div>
+
+
+                <div class="header-buttons">
+
+                    <a href="configcriterios.html"
+                       class="btn btn-outline">
+                        <i class="fa-solid fa-sliders"></i>
+                        Configurar criterios
+                    </a>
+
+                    <button type="button"
+                            class="btn btn-outline"
+                            id="btnGuardarBorrador"
+                            onclick="guardarBorrador()">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Guardar borrador
+                    </button>
+
+                    <button type="button"
+                            class="btn btn-outline"
+                            id="btnExportar"
+                            onclick="exportarPlanilla()">
+                        <i class="fa-solid fa-file-export"></i>
+                        Exportar
+                    </button>
+
+                    <button type="button"
+                            class="btn btn-navy"
+                            id="btnEnviar"
+                            onclick="enviarCoordinacion()">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Enviar a Coordinación
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 CONTENIDO ACADÉMICO
+            =================================== -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- CRITERIOS DE EVALUACIÓN -->
+
+                <section class="card criteria-card">
+
+                    <div class="card-header-flex">
+
+                        <div>
+                            <h3>Criterios de Evaluación</h3>
+
+                            <p class="subtext">
+                                Criterios establecidos para este grupo.
+                            </p>
+                        </div>
+
+                        <div class="total-badge">
+
+                            <span class="total-percent" id="totalPercent">
+                                100%
+                            </span>
+
+                            <span class="total-label">
+                                Total
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CRITERIOS GENERADOS POR JS -->
+
+                    <div class="criteria-list" id="criteriaList">
+
+                        <div class="criterion-box">
+
+                            <div class="input-group">
+                                <label>Tareas y trabajos</label>
+                                <strong>30%</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="criterion-box">
+
+                            <div class="input-group">
+                                <label>Examen parcial</label>
+                                <strong>30%</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="criterion-box">
+
+                            <div class="input-group">
+                                <label>Proyecto final</label>
+                                <strong>40%</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="configcriterios.html"
+                       class="btn-add-dashed">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        Modificar criterios
+                    </a>
+
+                </section>
+
+
+                <!-- ==================================
+                     LISTADO DE ESTUDIANTES
+                =================================== -->
+
+                <section class="card grades-card">
+
+                    <div class="card-header-flex align-start">
+
+                        <div>
+                            <h3>
+                                Listado de Estudiantes y Calificaciones
+                            </h3>
+
+                            <p class="subtext">
+                                Registro académico del grupo.
+                                Calificaciones ponderadas según los criterios.
+                            </p>
+                        </div>
+
+
+                        <div class="meta-badges">
+
+                            <div class="badge-info">
+                                <strong id="totalEstudiantes">32</strong>
+                                <small>Estudiantes</small>
+                            </div>
+
+                            <div class="badge-blue">
+                                <span>Periodo</span>
+                                <strong>2024-I</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TABLA DE NOTAS -->
+
+                    <div class="table-responsive">
+
+                        <table class="grades-table" id="tablaNotas">
+
+                            <thead>
+
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Estudiante</th>
+
+                                    <th class="text-center">
+                                        Tareas y trabajos
+                                        <span class="weight-sub">30%</span>
+                                    </th>
+
+                                    <th class="text-center">
+                                        Examen parcial
+                                        <span class="weight-sub">30%</span>
+                                    </th>
+
+                                    <th class="text-center">
+                                        Proyecto final
+                                        <span class="weight-sub">40%</span>
+                                    </th>
+
+                                    <th class="text-center">
+                                        Definitiva
+                                    </th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td class="text-muted">001</td>
+
+                                    <td class="font-medium">
+                                        Alvarez, Carlos
+                                    </td>
+
+                                    <td class="text-center">
+                                        <input type="number"
+                                               class="grade-input"
+                                               value="4.2"
+                                               min="0"
+                                               max="5"
+                                               step="0.1"
+                                               aria-label="Nota de tareas de Carlos Alvarez">
+                                    </td>
+
+                                    <td class="text-center">
+                                        <input type="number"
+                                               class="grade-input"
+                                               value="3.8"
+                                               min="0"
+                                               max="5"
+                                               step="0.1"
+                                               aria-label="Nota de parcial de Carlos Alvarez">
+                                    </td>
+
+                                    <td class="text-center">
+                                        <input type="number"
+                                               class="grade-input"
+                                               value="4.0"
+                                               min="0"
+                                               max="5"
+                                               step="0.1"
+                                               aria-label="Nota de proyecto de Carlos Alvarez">
+                                    </td>
+
+                                    <td class="text-center final-grade font-bold">
+                                        4.00
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td class="text-muted">002</td>
+
+                                    <td class="font-medium">
+                                        Bermúdez, Diana
+                                    </td>
+
+                                    <td class="text-center">
+                                        <input type="number"
+                                               class="grade-input"
+                                               value="3.5"
+                                               min="0"
+                                               max="5"
+                                               step="0.1"
+                                               aria-label="Nota de tareas de Diana Bermúdez">
+                                    </td>
+
+                                    <td class="text-center">
+                                        <input type="number"
+                                               class="grade-input"
+                                               value="4.5"
+                                               min="0"
+                                               max="5"
+                                               step="0.1"
+                                               aria-label="Nota de parcial de Diana Bermúdez">
+                                    </td>
+
+                                    <td class="text-center">
+                                        <input type="number"
+                                               class="grade-input"
+                                               value="3.9"
+                                               min="0"
+                                               max="5"
+                                               step="0.1"
+                                               aria-label="Nota de proyecto de Diana Bermúdez">
+                                    </td>
+
+                                    <td class="text-center final-grade font-bold">
+                                        3.96
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td class="text-muted">003</td>
+
+                                    <td class="font-medium">
+                                        Castillo, Esteban
+                                    </td>
+
+                                    <td class="text-center">
+                                        <input type="number"
+                                               class="grade-input danger-border"
+                                               value="2.8"
+                                               min="0"
+                                               max="5"
+                                               step="0.1"
+                                               aria-label="Nota de tareas de Esteban Castillo">
+                                    </td>
+
+                                    <td class="text-center">
+                                        <input type="number"
+                                               class="grade-input"
+                                               value="3.1"
+                                               min="0"
+                                               max="5"
+                                               step="0.1"
+                                               aria-label="Nota de parcial de Esteban Castillo">
+                                    </td>
+
+                                    <td class="text-center">
+                                        <input type="number"
+                                               class="grade-input"
+                                               value=""
+                                               min="0"
+                                               max="5"
+                                               step="0.1"
+                                               placeholder="Pendiente"
+                                               aria-label="Nota de proyecto de Esteban Castillo">
+                                    </td>
+
+                                    <td class="text-center final-grade font-bold text-muted">
+                                        Pendiente
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- ACCIONES -->
+
+                    <div class="grade-actions">
+
+                        <button type="button"
+                                class="btn btn-outline"
+                                id="btnActualizarNotas">
+                            <i class="fa-solid fa-rotate"></i>
+                            Actualizar promedios
+                        </button>
+
+                        <button type="button"
+                                class="btn btn-navy"
+                                id="btnGuardarNotas">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            Guardar calificaciones
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- ==================================
+                 INFORMACIÓN INFERIOR
+            =================================== -->
+
+            <footer class="bottom-footer">
+
+                <p>
+                    © 2026 Academia Pro - Sistema de Gestión Académica
+                </p>
+
+                <span>
+                    Portal Docente · Calificaciones
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- ==========================================
+         ALERTAS
+    =========================================== -->
+
+    <div id="toastContainer"></div>
+
+
+    <!-- AUTENTICACIÓN -->
+
+    <script src="../../js/auth.js" data-rol="docente"></script>
+
+    <!-- JAVASCRIPT DE ESTA VISTA -->
+
+    <script src="../js/calycriterios.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia Pro - Horario</title>
+
+    <!-- Conexión con CSS -->
+    <link rel="stylesheet" href="../css/horario.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- BARRA LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">🎓</div>
+
+            <div>
+                <h2>Academia Pro</h2>
+                <span>PORTAL ESTUDIANTE</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="Panel_E.html">⌂ Inicio</a>
+            <a href="horario.html">▣ Mis Cursos</a>
+            <a class="active" href="horario.html">▤ Horario</a>
+            
+        </nav>
+
+    </aside>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main">
+
+        <!-- BARRA SUPERIOR -->
+        <header class="topbar">
+
+            <div class="search">
+                🔍 &nbsp; Buscar matrícula, estudiante o asignatura...
+            </div>
+
+            <div class="icons">
+                ❔ &nbsp; 🔔 &nbsp; 👤
+            </div>
+
+        </header>
+
+
+        <!-- INFORMACIÓN DEL ESTUDIANTE -->
+        <section class="student-header">
+
+            <div class="student-info">
+
+                <div class="avatar">👩🏻</div>
+
+                <div>
+                    <small>PREGRADO • INGENIERÍA DE SISTEMAS</small>
+
+                    <h1>Mis Asignaturas y Horario Semanal</h1>
+
+                    <p>
+                        Estudiante:
+                        <b>Sofía Delgado</b>
+                        • Cód: 2021102049
+                        • Semestre VI
+                    </p>
+                </div>
+
+            </div>
+
+            <button>⇩ Exportar PDF</button>
+
+        </section>
+
+
+        <!-- TARJETAS -->
+        <section class="cards">
+
+            <div class="card">
+                <small>CRÉDITOS INSCRITOS</small>
+                <strong>18 <em>/ 20 máx</em></strong>
+                <span>Carga académica regular</span>
+            </div>
+
+            <div class="card">
+                <small>ASIGNATURAS ACTIVAS</small>
+                <strong>5 Cursos</strong>
+                <span>100% Presencial</span>
+            </div>
+
+            <div class="card">
+                <small>HORAS SEMANALES</small>
+                <strong>24 hrs</strong>
+                <span>16h teoría • 8h labs</span>
+            </div>
+
+            <div class="card">
+                <small>EDIFICIOS / SEDES</small>
+                <strong>Bloques A, C</strong>
+                <span>Sede Central Campus Norte</span>
+            </div>
+
+        </section>
+
+
+        <!-- BOTONES DEL HORARIO -->
+        <div class="toolbar">
+
+            <button class="selected">▦ Horario Semanal (Grilla)</button>
+
+            <button>☷ Lista de Asignaturas</button>
+
+            <div class="week">
+                ‹ &nbsp; 📅 Semana 6: 24 Mar - 29 Mar, 2025 &nbsp; ›
+            </div>
+
+        </div>
+
+
+        <!-- PRÓXIMA CLASE -->
+        <div class="next-class">
+
+            <div>
+                <small>🔔 PRÓXIMA CLASE EN CURSO</small>
+
+                <h3>Programación Orientada a Objetos • Lab 4 (Edificio C)</h3>
+            </div>
+
+            <div class="class-time">
+                Horario de hoy
+                <br>
+                <b>10:00 - 12:00</b>
+            </div>
+
+            <button>Inicia en 35 min</button>
+
+        </div>
+
+
+        <!-- CONVENCIONES -->
+        <div class="legend">
+
+            <b>Convenciones de Cursos:</b>
+
+            <span class="blue-dot"></span> Cálculo
+            <span class="brown-dot"></span> Física
+            <span class="dark-dot"></span> Prog. Orientada a Objetos
+            <span class="gray-dot"></span> Álgebra
+
+        </div>
+
+
+        <!-- HORARIO -->
+        <section class="schedule">
+
+            <!-- HORAS -->
+            <div class="time-column">
+                <div>HORA</div>
+                <div>07:00</div>
+                <div>08:00</div>
+                <div>09:00</div>
+                <div>10:00</div>
+                <div>11:00</div>
+                <div>12:00</div>
+                <div>13:00</div>
+                <div>14:00</div>
+                <div>15:00</div>
+                <div>16:00</div>
+                <div>17:00</div>
+                <div>18:00</div>
+            </div>
+
+
+            <!-- LUNES -->
+            <div class="day">
+                <h4>LUNES</h4>
+
+                <div class="event blue" style="top:32px;height:108px">
+                    <b>MAT-201</b><br>
+                    07:00 - 09:00<br>
+                    <strong>Cálculo Diferencial</strong><br>
+                    <small>Aula 302 • D. Valenzuela</small>
+                </div>
+
+                <div class="event brown" style="top:418px;height:108px">
+                    <b>FIS-102</b><br>
+                    14:00 - 16:00<br>
+                    <strong>Física Mecánica</strong><br>
+                    <small>Lab Fís • Bloque A</small>
+                </div>
+            </div>
+
+
+            <!-- MARTES -->
+            <div class="day">
+                <h4>MARTES</h4>
+
+                <div class="event blue" style="top:132px;height:108px">
+                    <b>MAT-105</b><br>
+                    09:00 - 11:00<br>
+                    <strong>Álgebra Lineal</strong><br>
+                    <small>Aula 104 • Quintero</small>
+                </div>
+
+                <div class="event brown" style="top:518px;height:108px">
+                    <b>SIS-310</b><br>
+                    16:00 - 18:00<br>
+                    <strong>Sistemas Digitales</strong><br>
+                    <small>Lab Hardware 2</small>
+                </div>
+            </div>
+
+
+            <!-- MIÉRCOLES -->
+            <div class="day">
+                <h4>MIÉRCOLES</h4>
+
+                <div class="event blue" style="top:32px;height:108px">
+                    <b>MAT-201</b><br>
+                    07:00 - 09:00<br>
+                    <strong>Cálculo Diferencial</strong><br>
+                    <small>Aula 302 • D. Valenzuela</small>
+                </div>
+
+                <div class="event dark" style="top:232px;height:108px">
+                    <b>SIS-204</b><br>
+                    10:00 - 12:00<br>
+                    <strong>Prog. Orientada a Objetos</strong><br>
+                    <small>Lab 4 • Edificio C</small>
+                </div>
+
+                <div class="event brown" style="top:418px;height:108px">
+                    <b>FIS-102</b><br>
+                    14:00 - 16:00<br>
+                    <strong>Física Mecánica</strong><br>
+                    <small>Aula 205 • Bloque A</small>
+                </div>
+            </div>
+
+
+            <!-- JUEVES -->
+            <div class="day">
+                <h4>JUEVES</h4>
+
+                <div class="event brown" style="top:132px;height:108px">
+                    <b>SIS-310</b><br>
+                    09:00 - 11:00<br>
+                    <strong>Sistemas Digitales</strong><br>
+                    <small>Lab Hardware 2</small>
+                </div>
+            </div>
+
+
+            <!-- VIERNES -->
+            <div class="day">
+                <h4>VIERNES</h4>
+
+                <div class="event blue" style="top:32px;height:108px">
+                    <b>MAT-105</b><br>
+                    07:00 - 09:00<br>
+                    <strong>Álgebra Lineal</strong><br>
+                    <small>Aula 104 • Quintero</small>
+                </div>
+
+                <div class="event dark" style="top:418px;height:108px">
+                    <b>SIS-204</b><br>
+                    14:00 - 16:00<br>
+                    <strong>Prog. Orientada a Objetos</strong><br>
+                    <small>Lab 4 • Edificio C</small>
+                </div>
+            </div>
+
+
+            <!-- SÁBADO -->
+            <div class="day">
+                <h4>SÁBADO</h4>
+
+                <div class="event gray" style="top:518px;height:108px">
+                    <b>TUT-001</b><br>
+                    16:00 - 18:00<br>
+                    <strong>Taller Libre</strong><br>
+                    <small>Biblioteca • Piso 2</small>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- PIE DE PÁGINA -->
+        <footer>
+
+            ⓘ Para cambios de grupo, solicitudes especiales o justificación
+            de ausencias, diríjase al módulo de
+            <b>Certificados y Trámites.</b>
+
+            <span>Última actualización: Hoy, 08:30 AM</span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- Conexión con JavaScript -->
+<script src="../../js/auth.js" data-rol="estudiante"></script>
+<script src="../js/horario.js"></script>
+
+<script src="../../js/api.js"></script>
+
+
+</body>
+</html>

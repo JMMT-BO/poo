@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academia Pro | Mis Grupos Asignados</title>
+
+    <!-- CSS DEL MÓDULO -->
+    <link rel="stylesheet" href="../css/gruposA.css">
+    <link rel="stylesheet" href="../css/configcriterios.css">
+
+    <!-- FUENTES E ICONOS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         BARRA LATERAL
+    =========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <div>
+                <h2>Academia Pro</h2>
+                <span>Portal Docente</span>
+            </div>
+        </div>
+
+        <div class="perfil-docente">
+            <div class="avatar-docente">CR</div>
+
+            <div class="datos-docente">
+                <strong data-usuario-nombre>Prof. Carlos Rivera</strong>
+                <span>Profesor Titular</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="gruposA.html"
+               class="nav-item active"
+               aria-current="page">
+                <i class="fa-solid fa-users"></i>
+                <span>Mis Grupos Asignados</span>
+            </a>
+
+            <a href="configcriterios.html" class="nav-item">
+                <i class="fa-solid fa-sliders"></i>
+                <span>Configuración de Criterios</span>
+            </a>
+
+            <a href="calycriterios.html" class="nav-item">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>Calificaciones</span>
+            </a>
+
+            <a href="../../html/registro.html"
+               id="btnCerrarSesion"
+               class="nav-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Cerrar Sesión</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL
+    =========================================== -->
+
+    <div class="main-wrapper">
+
+        <!-- ENCABEZADO -->
+
+        <header class="top-header">
+
+            <div class="search-global">
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text"
+                       id="globalSearchInput"
+                       placeholder="Buscar matrícula, estudiante o asignatura...">
+            </div>
+
+            <div class="header-actions">
+
+                <button type="button"
+                        class="icon-btn"
+                        id="btnAyuda"
+                        title="Ayuda">
+                    <i class="fa-regular fa-circle-question"></i>
+                </button>
+
+                <button type="button"
+                        class="icon-btn"
+                        id="btnNotificaciones"
+                        title="Notificaciones">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="badge"></span>
+                </button>
+
+                <div class="user-profile">
+                    <div class="avatar">CR</div>
+                    <div class="user-details">
+                        <strong>Prof. Carlos Rivera</strong>
+                        <span>Profesor Titular</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <main class="content">
+
+            <!-- PRESENTACIÓN -->
+
+            <section class="page-header-info">
+
+                <div class="user-title-box">
+
+                    <div class="user-icon-box">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+
+                    <div>
+                        <span class="portal-label">
+                            SGA ACADÉMICO · PORTAL DOCENTE
+                        </span>
+
+                        <h1>Mis Grupos Asignados</h1>
+
+                        <p>
+                            Consulta y administra tus cursos y grupos académicos.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="top-action-btns">
+
+                    <button type="button"
+                            class="btn btn-light"
+                            id="btnSemestre">
+                        <i class="fa-regular fa-calendar"></i>
+                        Semestre Vigente
+                    </button>
+
+                    <button type="button"
+                            class="btn btn-navy"
+                            id="syncBtn">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                        Sincronizar
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- AVISO ACADÉMICO -->
+
+            <section class="alert-banner">
+
+                <div class="alert-content">
+
+                    <div class="alert-icon">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+
+                    <div>
+                        <strong>Información académica</strong>
+
+                        <p>
+                            Consulta las fechas de cierre y los pendientes
+                            correspondientes a tus grupos asignados.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RESUMEN -->
+
+            <section class="hero-banner">
+
+                <div class="hero-info">
+
+                    <span class="hero-tag">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        PERÍODO ACADÉMICO 2024-I
+                    </span>
+
+                    <h2>Gestión de Cursos Asignados</h2>
+
+                    <p>
+                        Administra tus grupos, consulta el avance académico
+                        y realiza el seguimiento de las calificaciones.
+                    </p>
+
+                </div>
+
+
+                <div class="hero-stats">
+
+                    <div class="stat-card">
+                        <div class="stat-label">TOTAL GRUPOS</div>
+                        <div class="stat-value" id="totalGrupos">04</div>
+                        <span class="stat-label">Cursos activos</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-label">ESTUDIANTES</div>
+                        <div class="stat-value" id="totalEstudiantes">128</div>
+                        <span class="stat-label">Matriculados</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-label">PROMEDIO GENERAL</div>
+                        <div class="stat-value">
+                            4.12 <span class="stat-decimal">/ 5.0</span>
+                        </div>
+                        <span class="stat-sub">+0.18 vs 2023-II</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FILTROS -->
+
+            <section class="filter-bar">
+
+                <div class="filter-controls">
+
+                    <input type="text"
+                           id="courseSearch"
+                           class="filter-input"
+                           placeholder="Buscar por código o asignatura...">
+
+                    <select id="jornadaFilter" class="filter-select">
+                        <option value="">Todas las jornadas</option>
+                        <option value="Mañana">Mañana</option>
+                        <option value="Tarde">Tarde</option>
+                    </select>
+
+                    <select id="semestreFilter" class="filter-select">
+                        <option value="">Todos los semestres</option>
+                        <option value="Semestre 1">Semestre 1</option>
+                        <option value="Semestre 2">Semestre 2</option>
+                        <option value="Semestre 3">Semestre 3</option>
+                        <option value="Semestre 4">Semestre 4</option>
+                    </select>
+
+                </div>
+
+                <div class="group-count">
+                    Mostrando:
+                    <strong id="visibleCount">4</strong>
+                    grupos
+                </div>
+
+            </section>
+
+
+            <!-- TARJETAS GENERADAS POR JAVASCRIPT -->
+
+            <section class="course-grid" id="courseGrid">
+
+                
+
+            </section>
+
+
+            <!-- PIE DE PÁGINA -->
+
+            <footer class="footer-banner">
+
+                <div class="help-info">
+                    <i class="fa-regular fa-circle-question"></i>
+
+                    <div>
+                        <strong>¿Necesitas ayuda?</strong>
+                        <p>
+                            Contacta al departamento de Registro y Control
+                            Académico.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer-actions">
+                    <button type="button" class="btn btn-light" id="btnGuia">
+                        <i class="fa-solid fa-file-arrow-down"></i>
+                        Guía rápida
+                    </button>
+
+                    <button type="button" class="btn btn-navy" id="btnSoporte">
+                        <i class="fa-solid fa-headset"></i>
+                        Soporte
+                    </button>
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- ==========================================
+         MODAL
+    =========================================== -->
+
+    <div class="modal-overlay" id="actionModal">
+
+        <div class="modal-container">
+
+            <div class="modal-header">
+                <h3 id="modalTitle" class="modal-title-text">
+                    Acción del curso
+                </h3>
+
+                <button type="button"
+                        class="icon-btn"
+                        id="btnCerrarModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="modal-body" id="modalBody">
+                Cargando información...
+            </div>
+
+            <div class="modal-footer" id="modalFooter">
+
+                <button type="button"
+                        class="btn btn-light"
+                        id="btnCancelarModal">
+                    Cancelar
+                </button>
+
+                <button type="button"
+                        class="btn btn-primary"
+                        id="modalConfirmBtn">
+                    Aceptar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- NOTIFICACIONES -->
+
+    <div id="toastContainer"></div>
+
+
+    <!-- AUTENTICACIÓN -->
+
+    <script src="../../js/auth.js" data-rol="docente"></script>
+
+    <!-- JAVASCRIPT DE LA VISTA -->
+
+    <script src="../js/gruposA.js" defer></script>
+
+    <script src="../../js/api.js"></script>
+    <script src="../js/gruposA.js"></script>
+
+</body>
+</html>

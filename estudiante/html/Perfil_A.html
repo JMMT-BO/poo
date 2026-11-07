@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGA Académico - Portal Estudiante</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/Perfil_A.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <div class="logo-icon">🎓</div>
+
+                <div class="logo-text">
+                    <strong>Academia Pro</strong>
+                    <span>• Portal Estudiante</span>
+                </div>
+            </div>
+
+            <button class="certificate-btn" id="certificateBtn">
+                ⇩ Descargar Certificado
+            </button>
+
+           <nav class="navigation">
+
+    <a href="Panel_E.html" class="active">
+        ⌁
+        <span>Mi Desempeño</span>
+    </a>
+
+    <a href="horario.html">
+        ▣
+        <span>Mis Asignaturas y Horario</span>
+    </a>
+
+</nav>
+
+            <div class="logout" id="logoutBtn">
+                ↪ &nbsp; Cerrar Sesión
+            </div>
+
+        </aside>
+
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div class="topbar-title">
+                    SGA Académico - Portal Estudiante
+                </div>
+
+                <div class="topbar-right">
+                    <div class="notification">♧</div>
+                    <div class="user-avatar">A</div>
+                </div>
+
+            </header>
+
+
+            <!-- CONTENIDO -->
+            <section class="content">
+
+                <div class="page-header">
+                    <h1>Mi Desempeño</h1>
+                    <p>Resumen académico del semestre actual.</p>
+                </div>
+
+
+                <!-- RESUMEN -->
+                <div class="summary">
+
+                    <!-- TARJETA ESTUDIANTE -->
+                    <div class="student-card">
+
+                        <div class="student-header">
+
+                            <div>
+                                <span class="student-status">ESTUDIANTE REGULAR</span>
+                                <h2 class="student-name">Alejandro García Pérez</h2>
+                                <div class="student-id">Matrícula: A01234567</div>
+                            </div>
+
+                            <div class="profile-photo">👨🏻</div>
+
+                        </div>
+
+                        <hr class="student-divider">
+
+                        <div class="student-details">
+
+                            <div>
+                                <div class="detail-label">Programa</div>
+                                <div class="detail-value">Ingeniería en Sistemas</div>
+                            </div>
+
+                            <div>
+                                <div class="detail-label">Semestre Actual</div>
+                                <div class="detail-value">8vo Semestre (2024-1)</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TARJETA PROMEDIO -->
+                    <div class="average-card">
+
+                        <div class="average-title">PROMEDIO SEMESTRAL</div>
+
+                        <div class="average-number">
+                            9.4
+                            <small>/10</small>
+                        </div>
+
+                        <div class="excellent">
+                            ↗ &nbsp; Excelente
+                            <br>
+                            Desempeño
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MATERIA PRINCIPAL -->
+                <h3 class="section-title">Detalle de Materia Principal</h3>
+
+                <div class="subject-grid">
+
+                    <!-- INFORMACIÓN MATERIA -->
+                    <div class="subject-card">
+
+                        <div class="subject-header">
+
+                            <div class="subject-icon">&lt;/&gt;</div>
+
+                            <div>
+                                <div class="subject-small">Materia Actual</div>
+
+                                <div class="subject-title">
+                                    Estructuras de Datos
+                                    <br>
+                                    Avanzadas
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="info-row">
+                            <span>Código de Grupo</span>
+                            <strong>CS302-G1</strong>
+                        </div>
+
+                        <div class="info-row">
+                            <span>Profesor Titular</span>
+                            <strong>Dra. Elena Ramos</strong>
+                        </div>
+
+                        <div class="info-row">
+                            <span>Horario</span>
+                            <strong>Mar, Jue 10:00 - 11:30</strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- CALIFICACIONES -->
+                    <div class="grades-card">
+
+                        <h3 class="grades-title">Desglose de Calificación</h3>
+
+                        <!-- 1ER PARCIAL -->
+                        <div class="grade-row">
+                            <div class="grade-header">
+                                <span>1er Parcial (30%)</span>
+                                <strong>9.0</strong>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 90%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- 2DO PARCIAL -->
+                        <div class="grade-row">
+                            <div class="grade-header">
+                                <span>2do Parcial (30%)</span>
+                                <strong>9.5</strong>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 95%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- PROYECTO FINAL -->
+                        <div class="grade-row">
+                            <div class="grade-header">
+                                <span>Proyecto Final (40%)</span>
+                                <strong>9.8</strong>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar final" style="width: 98%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- PROMEDIO -->
+                        <div class="subject-average">
+                            <span>Promedio Materia</span>
+                            <strong>9.5</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="../../js/auth.js" data-rol="estudiante"></script>
+    <script src="../js/Perfil.js"></script>
+
+    <script src="../../js/api.js"></script>
+
+
+</body>
+
+</html>

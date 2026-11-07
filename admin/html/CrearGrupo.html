@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Grupo - Academia Pro</title>
+    <!-- Rutas corregidas hacia admin/css/ -->
+    <link rel="stylesheet" href="../css/Ges_Universidad.css">
+    <link rel="stylesheet" href="../css/grupo.css">
+</head>
+
+<body>
+
+    <!-- BARRA LATERAL -->
+    <aside class="sidebar">
+        <div class="logo-admin">
+            <h2>Academia Pro</h2>
+            <span>Portal Universitario</span>
+        </div>
+
+        <div class="usuario-admin">
+            <strong>Coordinador / Admin</strong>
+        </div>
+
+        <nav class="menu">
+            <a href="Ges_Universidad.html">Panel de Control</a>
+            <a href="CrearUsuario.html">Crear Usuario</a>
+            <a href="CrearMateria.html">Crear Materia</a>
+            <a href="CrearGrupo.html" class="activo">Crear Grupo</a>
+            <a href="../../html/registro.html" id="btnCerrarSesion">Cerrar Sesión</a>
+        </nav>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenido">
+        <!-- BARRA SUPERIOR -->
+        <header class="topbar">
+            <div class="ruta">
+                <strong>Academia Pro</strong>
+                <span>/ Crear Grupo</span>
+            </div>
+
+            <div class="perfil">
+                <div>
+                    <strong>Dr. Carlos Mendoza</strong>
+                    <small>Administrador / Central</small>
+                </div>
+                <div class="avatar">CM</div>
+            </div>
+        </header>
+
+        <!-- ENCABEZADO -->
+        <section class="encabezado-grupo">
+            <h1>Configuración y Asignación de Grupo</h1>
+            <p>Defina los parámetros académicos, docentes y logísticos para la apertura de un nuevo grupo.</p>
+        </section>
+
+        <!-- FORMULARIO -->
+        <section class="formulario-grupo">
+            <form id="formGrupo">
+                <!-- IDENTIFICACIÓN -->
+                <div class="seccion-formulario">
+                    <h2>Identificación del Grupo</h2>
+                    <div class="linea-formulario">
+                        <div class="campo-grupo">
+                            <label for="codigoGrupo">Código del Grupo *</label>
+                            <input type="text" id="codigoGrupo" placeholder="Ej. MAT-101-A">
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="periodo">Semestre / Período *</label>
+                            <select id="periodo">
+                                <option value="">Seleccione un período</option>
+                                <option value="2026-I">2026-I</option>
+                                <option value="2026-II">2026-II</option>
+                                <option value="2027-I">2027-I</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ASIGNACIÓN ACADÉMICA -->
+                <div class="seccion-formulario">
+                    <h2>Asignación Académica</h2>
+                    <div class="linea-formulario">
+                        <div class="campo-grupo">
+                            <label for="materia">Materia *</label>
+                            <select id="materia">
+                                <option value="">Buscar materia...</option>
+                                <option value="Calculo Diferencial">Cálculo Diferencial</option>
+                                <option value="Fisica Clasica">Física Clásica</option>
+                                <option value="Programacion">Programación</option>
+                                <option value="Algebra Lineal">Álgebra Lineal</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="docente">Docente Asignado *</label>
+                            <select id="docente">
+                                <option value="">Seleccionar docente...</option>
+                                <option value="Carlos Ruiz">Carlos Ruiz</option>
+                                <option value="Elena Marquez">Elena Márquez</option>
+                                <option value="Ana Gomez">Ana Gómez</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DETALLES LOGÍSTICOS -->
+                <div class="seccion-formulario">
+                    <h2>Detalles Logísticos</h2>
+                    <div class="linea-formulario">
+                        <div class="campo-grupo campo-capacidad">
+                            <label for="capacidad">Capacidad Máx. *</label>
+                            <input type="number" id="capacidad" placeholder="30" min="1">
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="aula">Aula Preferida</label>
+                            <input type="text" id="aula" placeholder="Ej. Edificio A - Lab 3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOTONES -->
+                <a href="Ges_Universidad.html" class="btn-cancelar">Cancelar</a>
+                <button type="submit" id="btnGuardarGrupo">Guardar Grupo</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- ALERTA -->
+    <div id="alerta" class="alerta">
+        <div class="alerta-contenido">
+            <span id="alertaIcono" class="alerta-icono">✓</span>
+            <div>
+                <h3 id="alertaTitulo">Éxito</h3>
+                <p id="alertaMensaje">La operación se realizó correctamente.</p>
+            </div>
+            <button id="cerrarAlerta" class="cerrar-alerta">×</button>
+        </div>
+    </div>
+
+    <!-- Scripts corregidos con rutas relativas correctas -->
+    <script src="../../js/auth.js" data-rol="administrador"></script>
+    <script src="../../js/almacen.js"></script>
+    <script src="../js/grupo.js"></script>
+</body>
+</html>
